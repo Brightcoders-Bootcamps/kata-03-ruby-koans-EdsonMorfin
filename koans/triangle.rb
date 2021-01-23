@@ -14,7 +14,11 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  if a==b and b==c and c==a
+  if a<=0 or b <=0 or c<=0
+    raise TriangleError,"Data must be bigger than 0"
+  elsif a + b <= c or b + c <= a or a + c <= b 
+    raise TriangleError, "Data must be bigger than 0"
+  elsif a==b and b==c 
     return :equilateral
   elsif a==b or b==c or c==a
     return :isosceles
